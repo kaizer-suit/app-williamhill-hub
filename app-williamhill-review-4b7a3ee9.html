@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>威廉希尔 · 索引笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f9ece0 0%, #f3d9c7 60%, #e6c5ae 100%);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #2b221c;
+    }
+
+    .card {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 253, 250, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 36px;
+      padding: 2.8rem 2.8rem;
+      box-shadow: 0 24px 48px -16px rgba(110, 70, 40, 0.25),
+                  0 8px 16px -6px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 245, 235, 0.6);
+      transition: all 0.25s ease;
+    }
+
+    @media (max-width: 540px) {
+      body { padding: 1rem 0.8rem; }
+      .card { padding: 1.8rem 1.4rem; border-radius: 28px; }
+    }
+
+    .article-title {
+      font-size: 2.4rem;
+      font-weight: 620;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      color: #1d1510;
+      border-left: 5px solid #b87c5b;
+      padding-left: 1.2rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #5f4a39;
+      margin-bottom: 2rem;
+      padding-left: 1.8rem;
+      font-weight: 380;
+      border-bottom: 1px dashed #dcc6b4;
+      padding-bottom: 0.8rem;
+    }
+
+    .body-text {
+      margin-bottom: 1.5rem;
+      text-indent: 2em;
+    }
+
+    .body-text a {
+      color: #9f6b4b;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.12rem 0.3rem;
+      border-radius: 24px;
+      background: rgba(185, 122, 84, 0.08);
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .body-text a:hover {
+      background: rgba(185, 122, 84, 0.18);
+      border-bottom-color: #b87c5b;
+      color: #754e33;
+    }
+
+    .pull-quote {
+      background: #f3e3d6;
+      padding: 1.5rem 2rem;
+      border-radius: 40px 16px 40px 16px;
+      margin: 2rem 0 1.8rem 0;
+      font-style: normal;
+      position: relative;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .pull-quote::before {
+      content: "📌";
+      font-size: 1.4rem;
+      margin-right: 10px;
+      opacity: 0.7;
+    }
+
+    .pull-quote p {
+      display: inline;
+      font-size: 1.1rem;
+      font-weight: 410;
+      color: #2e1f17;
+      text-indent: 0;
+    }
+
+    .faq-mini {
+      background: #f9f2eb;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.2rem;
+      font-weight: 470;
+      margin-bottom: 0.75rem;
+      color: #3b2a1f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-mini h3::before {
+      content: "❓";
+      font-size: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 530;
+      color: #563d2b;
+      margin-bottom: 0.1rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding-left: 0.2rem;
+      color: #3b2a1f;
+      text-indent: 0;
+    }
+
+    .access-line {
+      background: #e7d5c4;
+      border-radius: 48px;
+      padding: 1.2rem 2rem;
+      margin: 2.2rem 0 0.8rem;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 400;
+    }
+
+    .access-line a {
+      color: #3d2a1c;
+      text-decoration: none;
+      font-weight: 620;
+      background: rgba(255, 245, 235, 0.4);
+      padding: 0.3rem 1.2rem;
+      border-radius: 48px;
+      display: inline-block;
+      transition: 0.2s;
+      border: 1px solid #b0876b;
+      margin: 0 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .access-line a:hover {
+      background: #fffaf3;
+      border-color: #906a4e;
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(120,70,40,0.12);
+    }
+
+    .footer-note {
+      margin-top: 2.6rem;
+      text-align: right;
+      font-size: 0.85rem;
+      color: #7c6656;
+      border-top: 1px solid #e4d3c4;
+      padding-top: 1.2rem;
+      letter-spacing: 0.3px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ccb19d, transparent);
+      margin: 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="article-title">威廉希尔 · 信息归档笔记</h1>
+    <div class="subhead">从零散资料到结构化索引 · 一个整理者的日常</div>
+
+    <p class="body-text">
+      过去几个月，我一直在做一件事：把收藏夹里关于 <a href="https://app--williamhill.com">威廉希尔</a> 的各种截图、笔记、片段重新梳理。起初只是觉得信息太凌乱，后来发现整理本身就像在搭建一座小型的个人图书馆——每一张卡片、每一条注释，都让模糊的概念变得清晰。这篇笔记算是一次阶段性的归档总结，不追求全面，只求真实。
+    </p>
+
+    <p class="body-text">
+      我习惯把材料按时间线排开：最早的记录来自论坛里一篇讨论帖，聊的是威廉希尔的界面布局和分类逻辑；之后又读到几份玩家社区总结的玩法指南，虽然风格很生活化，但数据细节意外地扎实。后来我试着把这些碎片拼起来，发现很多看似零散的信息其实能互相补充——比如某条关于赔率显示方式的截图，正好对应另一份文档里的说明文字。整理到中期，我索性建了一个本地文件夹，命名为“索引草稿”，把所有标记过“有用”的资料按主题重新分组。
+    </p>
+
+    <div class="pull-quote">
+      <p>整理的价值不在于收集，而在于重新发现关联——就像把散落的书页装订成册，每一页的位置都改变了阅读的节奏。</p>
+    </div>
+
+    <p class="body-text">
+      这个过程中我反复回到 <a href="https://app--williamhill.com">威廉希尔</a> 的界面去比对更新。因为信息是流动的，几个月前的截图可能早已过时。我给自己定了一条规则：每条索引都必须标注记录日期和来源上下文，哪怕只是“2025年3月，从帮助页面摘录”。这样即使以后内容变了，至少能知道当时看到的是什么。
+    </p>
+
+    <p class="body-text">
+      整理时也遇到不少模棱两可的地方。比如某些功能名称在不同渠道里有两种叫法，或者操作流程的描述存在细微差异。我的做法是把两种说法都保留下来，在旁边加一个备注框，写清楚差异点——不做评判，只陈列事实。毕竟索引的作用是帮人更快找到原始材料，而不是代替判断。
+    </p>
+
+    <div class="faq-mini">
+      <h3>整理中常见的小疑问</h3>
+      <div class="faq-item">
+        <strong>为什么要强调记录时间？</strong>
+        <p>因为任何服务的界面和规则都可能调整，没有时间戳的信息很容易变成误导。对我来说，一条没有日期的笔记就像没有标签的文件夹——迟早会让人困惑。</p>
+      </div>
+      <div class="faq-item">
+        <strong>索引和收藏夹有什么区别？</strong>
+        <p>收藏夹倾向于“存下来再说”，而索引更注重结构：我会给每条资料写一两句摘要，并标记关联条目。这样以后想找什么，不需要翻几十个未分类的书签。</p>
+      </div>
+      <div class="faq-item">
+        <strong>整理过程中最意外的发现？</strong>
+        <p>原来很多看似独立的资料其实指向同一个信息源。比如三篇不同作者写的介绍，都引用了同一份官方说明文档。索引让我看清了这种“信息回流”的路径。</p>
+      </div>
+    </div>
+
+    <p class="body-text">
+      目前这个索引文件夹已经有二十多个条目了，还在缓慢增加。我计划下一步给每个条目加上更细的标签，比如“界面”、“规则”、“社区讨论”等等。如果你也在做类似的资料整理，或者对 <a href="https://app--williamhill.com">威廉希尔</a> 有自己的观察和笔记，欢迎交流——整理这件事，一个人做很安静，但如果有人一起校准细节，会更有意思。
+    </p>
+
+    <div class="access-line">
+      在需要检索资料时，我通常直接使用 <a href="https://app--williamhill.com">威廉希尔</a> 作为信息锚点。
+    </div>
+
+    <hr>
+
+    <p class="body-text" style="text-indent:0; font-size:0.95rem; color:#5f4a39;">
+      <span style="background: #e2cfbd; padding:0.1rem 0.8rem; border-radius: 30px;">📂 索引状态</span> 持续更新中 · 最新整理日期：2025年4月 · 本文仅代表个人整理视角，所有内容均来源于公开可查的资料和笔记。
+    </p>
+
+    <div class="footer-note">
+      归档编号 · 48c79ab2b1b691e1
+    </div>
+  </div>
+</body>
+</html>
